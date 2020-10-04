@@ -69,10 +69,18 @@ class Map {
     let radius = 5;
     d3.select("#points")
       .append("circle")
-      .attr("cx", this.projection(data.host_pos)[0])
-      .attr("cy", this.projection(data.host_pos)[1])
+      .attr("cx", this.projection(data.win_pos)[0])
+      .attr("cy", this.projection(data.win_pos)[1])
       .attr("r", radius)
       .attr("class", "gold")
+    ;
+
+    d3.select("#points")
+      .append("circle")
+      .attr("cx", this.projection(data.ru_pos)[0])
+      .attr("cy", this.projection(data.ru_pos)[1])
+      .attr("r", radius)
+      .attr("class", "silver")
     ;
   }
 

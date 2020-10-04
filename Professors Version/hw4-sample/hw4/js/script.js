@@ -9,7 +9,8 @@ d3.csv("data/fifa-world-cup.csv", function (d) {
   d.avg_goals = +d.AVERAGE_GOALS;
   d.attendance = +d.AVERAGE_ATTENDANCE;
   // Lat and Lons of gold and silver medals teams
-  d.host_pos = [+d.host_LON, +d.host_LAT];
+  d.win_pos = [+d.WIN_LON, +d.WIN_LAT];
+  d.ru_pos = [+d.RUP_LON, +d.RUP_LAT];
 
   //Break up lists into javascript arrays
   d.teams_iso = d3.csvParse(d.TEAM_LIST).columns;
