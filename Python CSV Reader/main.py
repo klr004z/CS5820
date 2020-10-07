@@ -12,6 +12,7 @@ for line in gamesFile:
     modifiedLine = line
     modifiedLine = modifiedLine.strip()
 
+    # one possible issue is that the csv file cell contains a , so I removed them
     lineList = modifiedLine.split(",")
     team = lineList[6]
     noc = lineList[7]
@@ -19,5 +20,16 @@ for line in gamesFile:
     city = lineList[11]
     medal = lineList[14]
 
-    print(team + " " + games)
+    if not(games in gamesDict):
+        print(games)
+        # the games dict should include
+        #0      1
+        #city   CountryDict, holding medal count
+        gamesDict[games] = [city, dict()]
+
+    curGameArray = gamesDict[games]
+
+
 gamesFile.close()
+
+print(gamesDict)
