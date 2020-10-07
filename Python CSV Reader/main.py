@@ -23,10 +23,9 @@ for line in gamesFile:
     if not(games in gamesDict):
         print(games)
         # the games dict should include
-        #0      1
-        #city   CountryDict, holding medal count
+        #0          1      2
+        #Country    city   CountryDict, holding medal count
         gamesDict[games] = [city, dict()]
-
     curGameArray = gamesDict[games]
 
 
