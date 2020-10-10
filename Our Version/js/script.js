@@ -12,6 +12,7 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   d.goals = +d.GOALS;
   d.avg_goals = +d.AVERAGE_GOALS;
   d.attendance = +d.AVERAGE_ATTENDANCE;
+ 
   // Lat and Lons of gold and silver medals teams
   d.hostNOC = d.GameCountryNOC;
   d.hostCity = d.City;
@@ -44,15 +45,15 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   // Define this as a global variable
   window.barChart = new BarChart(worldMap, infoPanel, allData);
 
-  // Draw the Bar chart for the first time
-  barChart.updateBarChart('attendance');
+  // Draw the Bar chart for the first time to show the number of attending counties
+  barChart.updateBarChart('NumberOfCountries');
 });
 
 /**
  *  Check the drop-down box for the currently selected data type and update the bar chart accordingly.
  *
- *  There are 4 attributes that can be selected:
- *  goals, matches, attendance and teams.
+ *  There are 2 attributes that can be selected:
+ *  attendance and countries.
  */
 function chooseData() {
   // ******* TODO: PART I *******

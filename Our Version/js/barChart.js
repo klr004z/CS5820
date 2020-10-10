@@ -33,13 +33,13 @@ class BarChart {
       years.push(d.year.toString());
     });
 
-    let height = 200;
+    let height = 500;
 
     // Create the x and y scales; make
     // sure to leave room for the axes
     let xScale = d3.scaleBand()
       .domain(years)
-      .range([0, 400])
+      .range([0, 500])
       .padding(0.25)
     ;
     
