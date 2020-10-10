@@ -133,6 +133,7 @@ header {
     width: 600px;
     margin-right: 20px;
     float: left;
+    
 
 }
 
@@ -159,4 +160,10 @@ header {
 #yAxis text {
     font-size: 14px;
 
+}
+
+rect {
+    fill: #0085c7;
+    stroke:#0085c7;
+    stroke-width: 2px
 }
