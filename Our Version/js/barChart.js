@@ -23,8 +23,12 @@ class BarChart {
     console.log(this.allData);
 
     let min = d3.min(this.allData, d => d[selectedDimension]);
-    let max = d3.max(this.allData, d => d[selectedDimension]);
+    
+    // Changed this because the max was only at 90 for the bar chart.
+    //let max = d3.max(this.allData, d => d[selectedDimension]);
 
+    let max = 210;
+    let width = 550;
     let minYear = d3.min(this.allData, d => d.year);
     let maxYear = d3.max(this.allData, d => d.year);
     let xvals = (maxYear-minYear)/4+1;
@@ -39,7 +43,7 @@ class BarChart {
     // sure to leave room for the axes
     let xScale = d3.scaleBand()
       .domain(years)
-      .range([0, 500])
+      .range([0, width])
       .padding(0.25)
     ;
     
@@ -64,6 +68,7 @@ class BarChart {
       .attr("x", 9)
       .attr("dy", "-.35em")
       .style("text-anchor", "start")
+      
     ;
 
     let yAxis = d3.axisLeft(yScale);
