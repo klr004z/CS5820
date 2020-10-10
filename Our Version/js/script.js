@@ -1,8 +1,9 @@
 
 // Load CSV file
-d3.csv("data/fifa-world-cup.csv", function (d) {
+d3.csv("data/TheOlympicData.csv", function (d) {
   // Convert numeric values to 'numbers'
-  d.year = +d.YEAR;
+  d.year = +d.Year;
+  console.log(d.years);
   d.teams = +d.TEAMS;
   d.matches = +d.MATCHES;
   d.goals = +d.GOALS;
