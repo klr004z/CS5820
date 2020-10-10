@@ -3,22 +3,29 @@
 d3.csv("data/TheOlympicData.csv", function (d) {
   // Convert numeric values to 'numbers'
   d.year = +d.Year;
-  console.log(d.years);
-  d.teams = +d.TEAMS;
+  d.teams = +d.AttendingCountriesNOC;
+  d.maxMedalCountry = d.MaxMedalCountry;
+  d.maxMedalCount = d.MaxMedalCount;
+  d.runnerUpMedalCountry = d.RunnerUpMedalCountry;
+  d.runnerUpMedalCount = d.RunnerUpMedalCount;
   d.matches = +d.MATCHES;
   d.goals = +d.GOALS;
   d.avg_goals = +d.AVERAGE_GOALS;
   d.attendance = +d.AVERAGE_ATTENDANCE;
   // Lat and Lons of gold and silver medals teams
-  d.host_pos = [+d.host_LON, +d.host_LAT];
+  d.hostNOC = d.GameCountryNOC;
+  d.hostCity = d.City;
+  d.host_pos = [+d.CityLon, +d.Citylat];
 
   //Break up lists into javascript arrays
-  d.teams_iso = d3.csvParse(d.TEAM_LIST).columns;
-  d.teams_names = d3.csvParse(d.TEAM_NAMES).columns;
+  d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
+  d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
+
+  console.log(d)
   return d;
 }).then(function(allData) {
 
-  allData = allData.reverse();
+  allData = allData;
 
   /* Create infoPanel, barChart and Map objects  */
   let infoPanel = new InfoPanel();
