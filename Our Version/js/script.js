@@ -10,15 +10,15 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   d.runnerUpMedalCountry = d.RunnerUpMedalCountry;
   d.runnerUpMedalCount = +d.RunnerUpMedalCount;
 
- 
+
   // Lat and Lons of gold and silver medals teams
   d.hostNOC = d.GameCountryNOC;
   d.hostCity = d.City;
   d.host_pos = [+d.CityLon, +d.Citylat];
 
   //Break up lists into javascript arrays
- // d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
- // d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
+ d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
+ d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
 
   //console.log(d)
   return d;
@@ -58,6 +58,6 @@ function chooseData() {
   // Changed the selected data when a user selects a different
   // menu item from the drop down.
   barChart.chooseData();
-  
+
 
 }
