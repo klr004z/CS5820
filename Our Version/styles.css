@@ -94,10 +94,11 @@ header {
     
     position: absolute;
     z-index: 10;
-    top: 160px;
-    left: 200px;
-    opacity: .04;
+    top: 360px;
+    left: 940px;
+    opacity: .05;
     pointer-events: none;
+    transform: rotate(90deg);
    
 }
 
