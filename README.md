@@ -1,8 +1,6 @@
 This is the README for CS5820 Homework 3
 
-The Olympics are held every 4 years. 
-
-Beginning in 1896 through 1992 the sumer and winter games were held during the same year (different cities)
+The Olympics are held every "4 years". Beginning in 1896 through 1992 the sumer and winter games were held during the same year (different cities).
 
 After 1992 the summer and winter games are held in differt years. 
 
