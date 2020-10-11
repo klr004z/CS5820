@@ -1,4 +1,4 @@
-Game,Year,NumberOfCountries,AttendingCountriesNOC,MaxMedalCountry,MaxMedalCount,RunnerUpMedalCountry,RunnerUpMedalCount,GameCountryNOC,City ,Citylat,CityLon
+Game,Year,NumberOfCountries,AttendingCountriesNOC,MaxMedalCountry,MaxMedalCount,RunnerUpMedalCountry,RunnerUpMedalCount,GameCountryNOC,City,Citylat,CityLon
 1896 Summer,1896,12,"AUS, AUT, DEN, FRA, GBR, GER, GRE, HUN, ITA, SUI, SWE, USA",GER,25,FRA,5,GRE,Athens,37.98381,23.727539
 1900 Summer,1900,31,"ARG, AUS, AUT, BEL, BOH, BRA, CAN, COL, CUB, DEN, ESP, FRA, GBR, GER, GRE, HAI, HUN, IND, IRI, ITA, LUX, MEX, NED, NOR, NZL, PER, ROU, RUS, SUI, SWE, USA",GBR,59,SUI,16,FRA,Paris,48.864716,2.349014
 1904 Summer,1904,15,"AUS, AUT, CAN, CUB, FRA, GBR, GER, GRE, HUN, ITA, NFL, NOR, RSA, SUI, USA",USA,128,CAN,27,USA,ST. Louis,38.627,90.1994
