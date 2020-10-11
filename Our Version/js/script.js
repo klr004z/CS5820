@@ -17,8 +17,6 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   d.host_pos = [d.CityLon, d.Citylat];
 
   //Break up lists into javascript arrays
-
-
   d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
   d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
 
