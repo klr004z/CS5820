@@ -20,9 +20,9 @@ class BarChart {
    */
   updateBarChart(selectedDimension) {
     // ******* TODO: PART I *******
-    console.log(selectedDimension);
+   // console.log(selectedDimension);
 
-    let min = d3.min(this.allData, d => d.selectedDimension);
+    let min = d3.min(this.allData, d => d[selectedDimension]);
     
     // Changed this because the max was only at 90 for the bar chart.
     let max = d3.max(this.allData, d => d[selectedDimension]);

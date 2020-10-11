@@ -3,11 +3,12 @@
 d3.csv("data/TheOlympicData.csv", function (d) {
   // Convert numeric values to 'numbers'
   d.year = +d.Year;
-  d.teams = d.AttendingCountriesNOC.split(" ").length;
+  d.teams = +d.AttendingCountriesNOC.split(" ").length;
+  d.number = +d.NumberOfCountries;
   d.maxMedalCountry = d.MaxMedalCountry;
-  d.maxMedalCount = d.MaxMedalCount;
+  d.maxMedalCount = +d.MaxMedalCount;
   d.runnerUpMedalCountry = d.RunnerUpMedalCountry;
-  d.runnerUpMedalCount = d.RunnerUpMedalCount;
+  d.runnerUpMedalCount = +d.RunnerUpMedalCount;
 
  
   // Lat and Lons of gold and silver medals teams
@@ -43,7 +44,7 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   window.barChart = new BarChart(worldMap, infoPanel, allData);
 
   // Draw the Bar chart for the first time to show the number of attending counties
-  barChart.updateBarChart('teams');
+  barChart.updateBarChart('number');
 });
 
 /**
