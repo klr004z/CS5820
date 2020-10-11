@@ -17,7 +17,7 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   d.host_pos = [d.CityLon, d.Citylat];
 
   //Break up lists into javascript arrays
-<<<<<<< HEAD
+
 
   d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
   d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
@@ -26,12 +26,12 @@ d3.csv("data/TheOlympicData.csv", function (d) {
  d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
 
 
-=======
+
   d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
   d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
  d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
  d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
->>>>>>> 79539396716a8d7371a5d04936f6317995b707b6
+
   //console.log(d)
   return d;
 }).then(function(allData) {
@@ -48,9 +48,7 @@ d3.csv("data/TheOlympicData.csv", function (d) {
     .then(function(world) {
       worldMap.drawMap(world);
     });
-  // let world = d3.json("data/world.json");
-  // console.log(world);
-  // worldMap.drawMap(world);
+  
 
   // Define this as a global variable
   window.barChart = new BarChart(worldMap, infoPanel, allData);
@@ -61,14 +59,11 @@ d3.csv("data/TheOlympicData.csv", function (d) {
 
 /**
  *  Check the drop-down box for the currently selected data type and update the bar chart accordingly.
- *
- *  There are 2 attributes that can be selected:
- *  attendance and countries.
+ *  There are 2 attributes that can be selected: Total Countries, Most Gold Wins, Second Most Wins
  */
 function chooseData() {
   // ******* TODO: PART I *******
-  // Changed the selected data when a user selects a different
-  // menu item from the drop down.
+  // Changed the selected data when a user selects a different menu item from the drop down.
   barChart.chooseData();
 
 

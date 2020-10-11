@@ -12,10 +12,7 @@ class InfoPanel {
    */
   updateInfo(d) {
 
-    // ******* TODO: PART III *******
-
-    // Update the text elements in the infoBox to reflect:
-    // World Cup Title, host, winner, runner_up, and all participating teams that year
+    // Update the text elements in the infoBox to reflect: Olympic Games, Host City, Most Gold Medals, Second Most Gold Medals, and Teams
     d3.select('#edition').html(d.Game);
     d3.select('#host').html(d.City);
     console.log(d);
@@ -33,11 +30,6 @@ class InfoPanel {
     });
     document.getElementById('teams').innerHTML = '';
     document.getElementById('teams').appendChild(ul);
-
-    // Hint: For the list of teams, you can create an list element for each team.
-    // Hint: Select the appropriate ids to update the text content.
-
-    //Set Labels
 
   }
 

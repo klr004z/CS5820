@@ -19,12 +19,10 @@ class BarChart {
    * Render and update the bar chart based on the selection of the data type in the drop-down box
    */
   updateBarChart(selectedDimension) {
-    // ******* TODO: PART I *******
+  
    // console.log(selectedDimension);
 
     let min = d3.min(this.allData, d => d[selectedDimension]);
-
-    // Changed this because the max was only at 90 for the bar chart.
     let max = d3.max(this.allData, d => d[selectedDimension]);
 
 
@@ -39,8 +37,7 @@ class BarChart {
 
     let height = 500;
 
-    // Create the x and y scales; make
-    // sure to leave room for the axes
+    // Create the x and y scales; make sure to leave room for the axes
     let xScale = d3.scaleBand()
       .domain(years)
       .range([0, width])
@@ -51,14 +48,14 @@ class BarChart {
       .domain([0, max])
       .range([height, 0]);
 
-    // Create colorScale
+    // Create colorScale -- we used the same color for min and max for consistency
     let colorScale = d3.scaleLinear()
       .domain([min, max])
       .range(["#0085c7", "#0085c7"]);
 
     let yaxisWidth = 60;
 
-    // Create the axes (hint: use #xAxis and #yAxis)
+    // Create the axes 
     let xAxis = d3.axisBottom(xScale);
     d3.select('#xAxis')
       .attr("transform", `translate(${yaxisWidth}, ${height})`)
@@ -78,7 +75,7 @@ class BarChart {
       .selectAll("text")
     ;
 
-    // Create the bars (hint: use #bars)
+    // Create the bars
     let bars = d3.select('#bars').selectAll('rect')
       .data(this.allData).enter().append('rect')
       .attr('y', height)
@@ -94,14 +91,10 @@ class BarChart {
       .attr('fill', (d,i) => colorScale(d[selectedDimension]))
     ;
 
-
-    // ******* TODO: PART II *******
-
     let bc = this;
 
     // Implement how the bars respond to click events
-    // Color the selected bar to indicate is has been selected.
-    // Make sure only the selected bar has this new color.
+    // Color the selected bar olympic yellow to indicate is has been selected.
     d3.select('#bars').selectAll('rect')
       .on('click', function(d, i) {
         if (bc.selectedElement != null) {
@@ -117,21 +110,16 @@ class BarChart {
       })
     ;
 
-    // Call the necessary update functions for when a user clicks on a bar.
-    // Note: think about what you want to update when a different bar is selected.
-
   }
 
   /**
    *  Check the drop-down box for the currently selected data type and update the bar chart accordingly.
-   *
-   *  There are 4 attributes that can be selected:
-   *  goals, matches, attendance and teams.
+   *  There are 4 attributes that can be selected: Total Countries, Gold Medals, and Silver Medals.
    */
   chooseData() {
-    // ******* TODO: PART I *******
-    //Changed the selected data when a user selects a different
-    // menu item from the drop down.
+   
+    //Changed the selected data when a user selects a different menu item from the drop down.
+    
     this.updateBarChart(document.getElementById('dataset').value);
   }
 }

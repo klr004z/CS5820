@@ -13,12 +13,6 @@ class Map {
    */
   clearMap() {
 
-    // ******* TODO: PART V*******
-    // Clear the map of any colors/markers; You can do this with inline styling or by
-    // defining a class style in styles.css
-
-    // Hint: If you followed our suggestion of using classes to style
-    // the colors and markers for hosts/teams/winners, you can use
     // d3 selection and .classed to set these classes on and off here.
     d3.selectAll('.countries')
       .classed('host', false)
@@ -36,18 +30,8 @@ class Map {
     //Clear any previous selections;
     this.clearMap();
 
-    // ******* TODO: PART V *******
-
-    // Add a marker for the winner and runner up to the map.
-
-    // Hint: remember we have a conveniently labeled class called .winner
-    // as well as a .silver. These have styling attributes for the two
-    // markers.
-
-
     // Select the host country and change it's color accordingly.
-    // console.log(data.host);
-    // console.log(data.host_country_code);
+
     let teams = '';
     data.teams_iso.forEach(function(t) {
       teams = teams + '#' + t.trim() + ',';
@@ -59,12 +43,6 @@ class Map {
 
     d3.select(`#${data.hostNOC}`)
       .classed('host', true);
-
-
-    // Iterate through all participating teams and change their color as well.
-
-    // We strongly suggest using CSS classes to style the selected countries.
-
 
     // Add a marker for the host city
     let radius = 5;
@@ -83,13 +61,6 @@ class Map {
    */
   drawMap(world) {
 
-    //(note that projection is a class member
-    // updateMap() will need it to add the winner/runner_up markers.)
-
-    // ******* TODO: PART IV *******
-
-    // Draw the background (country outlines; hint: use #map)
-    // Make sure and add gridlines to the map
 
     let path = d3.geoPath()
       .projection(this.projection);
@@ -117,13 +88,6 @@ class Map {
       .attr("d", path)
       .attr('class', 'countries')
     ;
-
-
-    // Hint: assign an id to each country path to make it easier to select afterwards
-    // we suggest you use the variable in the data element's .id field to set the id
-
-    // Make sure and give your paths the appropriate class (see the .css selectors at
-    // the top of the provided html file)
 
   }
 
