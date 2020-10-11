@@ -24,13 +24,15 @@
 </div>
 
 <div id="details" class="view">
-        <h2 id="edition">Olympic Finalists</h2>
+        <h2 id="edition">Olympic Games</h2>
         <h3>Host</h3>
         <span id="host"></span>
         <h3>Gold Medal</h3>
         <span id="winner"></span>
+        <span id="winnercount"></span>
         <h3>Silver Medal</h3>
         <span id="silver"></span>
+        <span id="silvercount"></span>
         <h3>Teams</h3>
         <span id="teams"></span>
     </div>
@@ -40,7 +42,7 @@
         <div id="plot-selector">
             <label>Plot:</label>
             <select id='dataset' onchange="chooseData()">
-                <option selected value='number'>Attendance</option>
+                <option selected value='number'>Total Countries</option>
                 <option value="maxMedalCount">Gold Wins</option>
                 <option value="runnerUpMedalCount">Silver Wins</option>
               

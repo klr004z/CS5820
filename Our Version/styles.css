@@ -71,16 +71,19 @@ h1 {
 }
 
 h2 {
-    font-family: 'font2';
+    font-family: 'font1';
     color: #0085c7;
     padding-bottom: 0;
-    margin-top: 3px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
 h3 {
+    padding-top: 12px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    
+    font-size: 26px;
 }
 
 * {
@@ -88,7 +91,7 @@ h3 {
 }
 
 p{
-    text-align: right;
+    text-align: center;
 }
 header {
     padding: 0.5em;
@@ -163,8 +166,3 @@ header {
 
 }
 
-rect {
-    fill: #0085c7;
-    stroke:#0085c7;
-    stroke-width: 2px
-}

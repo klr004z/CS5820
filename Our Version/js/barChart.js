@@ -54,7 +54,7 @@ class BarChart {
     // Create colorScale
     let colorScale = d3.scaleLinear()
       .domain([min, max])
-      .range(["darkgray", "steelblue"]);
+      .range(["#0085c7", "#0085c7"]);
 
     let yaxisWidth = 60;
 
@@ -110,7 +110,7 @@ class BarChart {
         }
         bc.selectedElement = d3.select(this);
         bc.selectedDatum = d;
-        bc.selectedElement.attr('fill', 'red');
+        bc.selectedElement.attr('fill', '#f5d8ac');
 
         bc.infoPanel.updateInfo(d);
         bc.worldMap.updateMap(d);
