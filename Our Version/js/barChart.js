@@ -20,14 +20,14 @@ class BarChart {
    */
   updateBarChart(selectedDimension) {
     // ******* TODO: PART I *******
-    console.log(this.allData);
+    console.log(selectedDimension);
 
-    let min = d3.min(this.allData, d => d[selectedDimension]);
+    let min = d3.min(this.allData, d => d.selectedDimension);
     
     // Changed this because the max was only at 90 for the bar chart.
-    //let max = d3.max(this.allData, d => d[selectedDimension]);
+    let max = d3.max(this.allData, d => d[selectedDimension]);
 
-    let max = 210;
+    
     let width = 550;
     let minYear = d3.min(this.allData, d => d.year);
     let maxYear = d3.max(this.allData, d => d.year);

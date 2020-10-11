@@ -3,15 +3,12 @@
 d3.csv("data/TheOlympicData.csv", function (d) {
   // Convert numeric values to 'numbers'
   d.year = +d.Year;
-  d.teams = +d.AttendingCountriesNOC;
+  d.teams = d.AttendingCountriesNOC.split(" ").length;
   d.maxMedalCountry = d.MaxMedalCountry;
   d.maxMedalCount = d.MaxMedalCount;
   d.runnerUpMedalCountry = d.RunnerUpMedalCountry;
   d.runnerUpMedalCount = d.RunnerUpMedalCount;
-  d.matches = +d.MATCHES;
-  d.goals = +d.GOALS;
-  d.avg_goals = +d.AVERAGE_GOALS;
-  d.attendance = +d.AVERAGE_ATTENDANCE;
+
  
   // Lat and Lons of gold and silver medals teams
   d.hostNOC = d.GameCountryNOC;
@@ -19,10 +16,10 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   d.host_pos = [+d.CityLon, +d.Citylat];
 
   //Break up lists into javascript arrays
-  d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
-  d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
+ // d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
+ // d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
 
-  console.log(d)
+  //console.log(d)
   return d;
 }).then(function(allData) {
 
@@ -46,7 +43,7 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   window.barChart = new BarChart(worldMap, infoPanel, allData);
 
   // Draw the Bar chart for the first time to show the number of attending counties
-  barChart.updateBarChart('NumberOfCountries');
+  barChart.updateBarChart('teams');
 });
 
 /**
@@ -60,5 +57,6 @@ function chooseData() {
   // Changed the selected data when a user selects a different
   // menu item from the drop down.
   barChart.chooseData();
+  
 
 }

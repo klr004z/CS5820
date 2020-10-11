@@ -16,10 +16,10 @@ class InfoPanel {
 
     // Update the text elements in the infoBox to reflect:
     // World Cup Title, host, winner, runner_up, and all participating teams that year
-    d3.select('#edition').html(d.EDITION);
-    d3.select('#host').html(d.host);
-    d3.select('#winner').html(d.winner);
-    d3.select('#silver').html(d.runner_up);
+    d3.select('#edition').html(d.Game);
+    d3.select('#host').html(d.City);
+    d3.select('#winner').html(d.MaxMedalCountry);
+    d3.select('#silver').html(d.RunnerUpMedalCountry);
 
     var ul = document.createElement("ul");
     d.teams_names.forEach(function(t) {
