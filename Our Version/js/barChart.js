@@ -26,7 +26,7 @@ class BarChart {
     let max = d3.max(this.allData, d => d[selectedDimension]);
 
 
-    let width = 550;
+    let width = 1100;
     let minYear = d3.min(this.allData, d => d.year);
     let maxYear = d3.max(this.allData, d => d.year);
     let xvals = (maxYear-minYear)/4+1;
@@ -103,7 +103,7 @@ class BarChart {
         }
         bc.selectedElement = d3.select(this);
         bc.selectedDatum = d;
-        bc.selectedElement.attr('fill', '#f5d8ac');
+        bc.selectedElement.attr('fill', ' #DF0042');
 
         bc.worldMap.updateMap(d);
         bc.infoPanel.updateInfo(d);
