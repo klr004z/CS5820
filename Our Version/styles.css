@@ -15,11 +15,11 @@ body {
 }
 
 .team {
-    fill: #fee8c8;
+    fill: #BAD6C6;
 }
 
 .team-html {
-    background-color: #fee8c8;
+    background-color: #BAD6C6;
 }
 
 .host {
@@ -39,9 +39,7 @@ body {
     stroke: #252525;
 }
 
-.selected {
-    fill: #d20a11;
-}
+
 
 /*Map grid style*/
 .grat {
