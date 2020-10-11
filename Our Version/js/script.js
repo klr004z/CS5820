@@ -14,9 +14,10 @@ d3.csv("data/TheOlympicData.csv", function (d) {
   // Lat and Lons of gold and silver medals teams
   d.hostNOC = d.GameCountryNOC;
   d.hostCity = d.City;
-  d.host_pos = [+d.CityLon, +d.Citylat];
+  d.host_pos = [d.CityLon, d.Citylat];
 
   //Break up lists into javascript arrays
+<<<<<<< HEAD
 
   d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
   d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
@@ -25,6 +26,12 @@ d3.csv("data/TheOlympicData.csv", function (d) {
  d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
 
 
+=======
+  d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
+  d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
+ d.teams_iso = d3.csvParse(d.AttendingCountriesNOC).columns;
+ d.teams_names = d3.csvParse(d.AttendingCountriesNOC).columns;
+>>>>>>> 79539396716a8d7371a5d04936f6317995b707b6
   //console.log(d)
   return d;
 }).then(function(allData) {

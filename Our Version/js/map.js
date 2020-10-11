@@ -53,7 +53,7 @@ class Map {
       teams = teams + '#' + t.trim() + ',';
     });
     teams = teams.substring(0, teams.length-1);
-    console.log(teams)
+    // console.log(teams)
     d3.selectAll(teams)
       .classed('team', true);
 
@@ -66,7 +66,7 @@ class Map {
     // We strongly suggest using CSS classes to style the selected countries.
 
 
-    // Add a marker for gold/silver medalists
+    // Add a marker for the host city
     let radius = 5;
     d3.select("#points")
       .append("circle")
