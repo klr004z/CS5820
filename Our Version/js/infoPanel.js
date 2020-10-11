@@ -17,8 +17,7 @@ class InfoPanel {
     // Update the text elements in the infoBox to reflect:
     // World Cup Title, host, winner, runner_up, and all participating teams that year
     d3.select('#edition').html(d.Game);
-    d3.select('#host').html(d.City);
-    console.log(d);
+    d3.select('#host').html(d.hostNOC + ", " + d.City);
     d3.select('#winner').html(d.MaxMedalCountry);
     d3.select('#winnercount').html(d.MaxMedalCount);
     d3.select('#silver').html(d.RunnerUpMedalCountry);
