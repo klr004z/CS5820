@@ -50,13 +50,14 @@ class Map {
     // console.log(data.host_country_code);
     let teams = '';
     data.teams_iso.forEach(function(t) {
-      teams = teams + '#' + t + ',';
+      teams = teams + '#' + t.trim() + ',';
     });
     teams = teams.substring(0, teams.length-1);
+    console.log(teams)
     d3.selectAll(teams)
       .classed('team', true);
 
-    d3.select(`#${data.host_country_code}`)
+    d3.select(`#${data.hostNOC}`)
       .classed('host', true);
 
 
@@ -105,6 +106,7 @@ class Map {
 
     // console.log(world);
     let geoJSON = topojson.feature(world, world.objects.countries);
+
     console.log(geoJSON);
 
     d3.select("#map").selectAll("path")

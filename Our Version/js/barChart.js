@@ -23,11 +23,11 @@ class BarChart {
    // console.log(selectedDimension);
 
     let min = d3.min(this.allData, d => d[selectedDimension]);
-    
+
     // Changed this because the max was only at 90 for the bar chart.
     let max = d3.max(this.allData, d => d[selectedDimension]);
 
-    
+
     let width = 550;
     let minYear = d3.min(this.allData, d => d.year);
     let maxYear = d3.max(this.allData, d => d.year);
@@ -46,11 +46,11 @@ class BarChart {
       .range([0, width])
       .padding(0.25)
     ;
-    
+
     let yScale = d3.scaleLinear()
       .domain([0, max])
       .range([height, 0]);
-    
+
     // Create colorScale
     let colorScale = d3.scaleLinear()
       .domain([min, max])
@@ -68,7 +68,7 @@ class BarChart {
       .attr("x", 9)
       .attr("dy", "-.35em")
       .style("text-anchor", "start")
-      
+
     ;
 
     let yAxis = d3.axisLeft(yScale);
@@ -112,8 +112,8 @@ class BarChart {
         bc.selectedDatum = d;
         bc.selectedElement.attr('fill', '#f5d8ac');
 
-        bc.infoPanel.updateInfo(d);
         bc.worldMap.updateMap(d);
+        bc.infoPanel.updateInfo(d);
       })
     ;
 
